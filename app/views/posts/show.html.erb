@@ -1,7 +1,10 @@
-<h1> This is post # <%= @post.id %></h1>
+<h1> Your Locker Info <%= @post.id %></h1>
 
 <h1>Title <%= @post.title %></h1>
 <h1>Content <%= @post.content %></h1>
 <a href = '/posts/edit/<%= @post.id %>'><h2>[Edit]</h2></a>
 <a href = '/posts/destroy/<%= @post.id %>' data-confirm = 'Are you sure' data/method = 'post'><h2>[Delete]</h2></a>
+
+
+<a href = '/posts/destroyAll/'><h2>[Delete All]</h2></a>
 <a href = '/posts/index'><h2>Back to Index</h2></a>

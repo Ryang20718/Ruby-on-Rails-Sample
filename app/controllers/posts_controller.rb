@@ -15,7 +15,8 @@ class PostsController < ApplicationController
   #      
   #      redirect_to "/posts/show/#{@post.id}"
   #  end
-     def create
+  
+    def create
         #action that saves submitted data into database
         #print "params = "
         #puts params
@@ -25,12 +26,21 @@ class PostsController < ApplicationController
         @post.content = params[:lComb]#Locker Comb
         @post.save
         
+        redirect_to "/posts/show/#{@post.id}"
     end
     
     def index
         #view that shows all posts
         @posts = Post.all
     end
+    
+  #  def show
+ #       #view that shows 1 post
+ #       print 'param = '
+ #       puts params
+        
+ #       @post = Post.find(params[:post_id])
+ #   end
     
     def show
         #view that shows 1 post
@@ -62,8 +72,15 @@ class PostsController < ApplicationController
     # deletes posts in database
     def destroy
         @post = Post.find(params[:post_id])
-        
+        @post.delete
         redirect_to '/posts/index'
     end
     
+    
+    def destroyAll
+        	
+    @posts = Post.all
+    @post.delete
+
+    end
 end
