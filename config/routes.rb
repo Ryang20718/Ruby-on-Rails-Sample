@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     get '/posts/destroy/:post_id' => 'posts#destroy'
     
     #deleteAll
-    #get '/posts/destroy' => 'posts#destroyAll'
+    get '/posts/destroyAll' => 'posts#destroyAll'
     
     root 'posts#new'
 end

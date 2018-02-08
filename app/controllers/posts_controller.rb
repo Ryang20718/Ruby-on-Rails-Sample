@@ -79,8 +79,7 @@ class PostsController < ApplicationController
     
     def destroyAll
         	
-    @posts = Post.all
-    @post.delete
-
+@post = Post.all(params[:post_id])
+@post.delete
     end
 end
